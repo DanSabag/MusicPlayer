@@ -1,7 +1,4 @@
-package com.dan.utils.constants;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.dan.musicPlayer.utils.constants;
 
 public class OSParameters {
     // Operating systems

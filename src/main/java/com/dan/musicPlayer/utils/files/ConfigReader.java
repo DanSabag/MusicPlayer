@@ -1,6 +1,6 @@
-package com.dan.utils.files;
+package com.dan.musicPlayer.utils.files;
 
-import com.dan.utils.constants.OSParameters;
+import com.dan.musicPlayer.utils.constants.OSParameters;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
