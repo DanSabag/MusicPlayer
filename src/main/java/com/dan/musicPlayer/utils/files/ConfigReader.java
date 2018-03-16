@@ -18,11 +18,11 @@ public class ConfigReader {
     public static JsonObject configuration;
 
     public static ConfigReader getInstance() {
-        configuration = new JsonObject();
         return instance;
     }
 
     private ConfigReader() {
+        configuration = new JsonObject();
         File configFile = new File(OSParameters.getDocumentsPath() + "/musicPlayer.config");
 
         try {
@@ -56,7 +56,7 @@ public class ConfigReader {
         }
     }
 
-    public static JsonElement getParameter(String property) {
+    public JsonElement getParameter(String property) {
         return (configuration.get(property));
     }
 }
