@@ -5,7 +5,7 @@ public class OSParameters {
     private static final int LINUX = 0;
 
     // OS data
-    private static final String[] mOSDocumentPaths = {"/Documents"};
+    private static final String[] mOSDocumentPaths = {"/Documents", "/Documents"};
 
     private static int getOperatingSystem() {
         String operatingSystem = System.getProperty("os.name").toLowerCase();
@@ -13,6 +13,10 @@ public class OSParameters {
 
         if (operatingSystem.contains("nix") || operatingSystem.contains("nux") || operatingSystem.indexOf("aix") > 0) {
             return (0);
+        } else {
+            if (operatingSystem.toLowerCase().contains("windows")) {
+                return (1);
+            }
         }
 
         return (-1);
