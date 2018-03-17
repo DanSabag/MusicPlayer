@@ -1,5 +1,6 @@
 package com.dan.musicPlayer.ui.scenes.musicPlayer.components;
 
+import com.dan.musicPlayer.utils.files.resources.songs.Song;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
@@ -20,14 +21,14 @@ public class SongControls extends HBox {
     private Button mBtnStop;
     private Button mBtnShuffle;
 
-    public SongControls(String songName, String artistAlbum) {
+    public SongControls(Song song) {
         // Initialize components
-        setComponents();
+        setComponents(song);
         addComponents();
     }
 
-    private void setComponents() {
-        // Set each of the components (function for each)
+    private void setComponents(Song song) {
+
     }
 
     private void addComponents() {

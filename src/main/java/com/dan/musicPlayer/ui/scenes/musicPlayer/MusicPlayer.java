@@ -1,6 +1,7 @@
 package com.dan.musicPlayer.ui.scenes.musicPlayer;
 
 import com.dan.musicPlayer.ui.scenes.interfaces.ISceneDesign;
+import com.dan.musicPlayer.ui.scenes.musicPlayer.components.SearchBar;
 import com.dan.musicPlayer.ui.scenes.musicPlayer.components.SideDrawer;
 import com.dan.musicPlayer.ui.scenes.musicPlayer.components.SongControls;
 import com.dan.musicPlayer.utils.files.ConfigReader;
@@ -12,6 +13,7 @@ public class MusicPlayer implements ISceneDesign<GridPane> {
 
     private SongControls mSongControls;
     private SideDrawer mSideDrawer;
+    private SearchBar mSearchBar;
 
     private MusicPlayer() {}
 
@@ -24,8 +26,12 @@ public class MusicPlayer implements ISceneDesign<GridPane> {
     }
 
     private void setPaneStyle(GridPane pane) {
-        String theme = ConfigReader.getParameter("theme").getAsString();
-        pane.setStyle("-fx-background-color: " + (theme.equals("dark") ? "#272728" : "#e3e3e8"));
+        try {
+            String theme = ConfigReader.getInstance().getParameter("theme").getAsString();
+            pane.setStyle("-fx-background-color: " + (theme.equals("dark") ? "#272728" : "#e3e3e8"));
+        } catch (NullPointerException e) {
+            // TODO: 16/03/2018 error config is corrupted
+        }
     }
 
     @Override
